@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Julia bonnoti</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html><head><base href="https://websimcreationengine.com/julia-bonnoti/">
+<title>Julia Bonnoti - Jeune Artiste d'Annecy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #4682b4, #87CEEB);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 3.5em;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1.5s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    background-color: rgba(255,255,255,0.9);
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav a {
+    color: #4682b4;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: all 0.5s;
+}
+
+nav a:hover::before {
+    left: 100%;
+}
+
+nav a:hover {
+    background-color: #4682b4;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(70,130,180,0.4);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    perspective: 1000px;
+}
+
+.painting {
+    margin: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.painting.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.painting:hover {
+    transform: scale(1.05) rotateY(10deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.painting img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.painting:hover img {
+    transform: scale(1.1);
+}
+
+.painting p {
+    padding: 15px;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    color: #4682b4;
+}
+
+.bio {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.bio.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bio h2 {
+    color: #4682b4;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bio p {
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+/* Water ripple effect for header */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.4);
+    animation: ripple 2s linear infinite;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+    <header id="header">
+        <h1>Julia Bonnoti</h1>
+    </header>
+    
+    <nav>
+        <a href="#bio">À propos</a>
+        <a href="#gallery">Galerie</a>
+    </nav>
+
+    <div id="bio" class="bio">
+        <h2>À propos de moi</h2>
+        <p>Bonjour ! Je m'appelle Julia Bonnoti, j'ai 17 ans et j'habite à Annecy. Je suis passionnée par la peinture depuis mon plus jeune âge. L'art est pour moi un moyen d'expression unique qui me permet de partager ma vision du monde. Inspirée par la beauté naturelle du lac d'Annecy et des montagnes environnantes, je cherche à capturer l'essence de ma région dans mes œuvres. Bienvenue dans mon univers coloré !</p>
+    </div>
+
+    <div id="gallery" class="gallery">
+        <div class="painting">
+            <img src="https://page-images.websim.ai/Vue%20du%20lac%20d'Annecy%20avec%20les%20montagnes%20en%20arri%C3%A8re-plan,%20style%20impressionniste_300x300x3YQgbbzfwf2k25O3Txb696a9487af7a.jpg" alt="Vue du lac d'Annecy avec les montagnes en arrière-plan, style impressionniste" width="300" height="300">
+            <p>Reflets sur le lac d'Annecy</p>
+        </div>
+        <div class="painting">
+            <img src="https://page-images.websim.ai/Ruelle%20pittoresque%20de%20la%20vieille%20ville%20d'Annecy,%20aquarelle_300x300xoU1uRm7mLv57WdnHtx1b8bd4f52cf39.jpg" alt="Ruelle pittoresque de la vieille ville d'Annecy, aquarelle" width="300" height="300">
+            <p>Charme de la vieille ville</p>
+        </div>
+        <div class="painting">
+            <img src="https://page-images.websim.ai/Paysage%20de%20montagne%20enneig%C3%A9e%20pr%C3%A8s%20d'Annecy,%20huile%20sur%20toile_300x300xoU1uRm7mLv57WdnHtxf6830e7506b0b.jpg" alt="Paysage de montagne enneigée près d'Annecy, huile sur toile" width="300" height="300">
+            <p>Majesté des Alpes</p>
+        </div>
+        <div class="painting">
+            <img src=https://page-images.websim.ai/Peinture%20abstraite%20inspir%C3%A9e%20des%20couleurs%20du%20lac%20et%20des%20montagnes%20d'Annecy_300x300x3YQgbbzfwf2k25O3Tx48022917cc594.jpg alt="Peinture abstraite inspirée des couleurs du lac et des montagnes d'Annecy" width="300" height="300">
+            <p>Essence d'Annecy</p>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Water ripple effect for header
+        const header = document.getElementById('header');
+        function createRipple(e) {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = `${e.clientX}px`;
+            ripple.style.top = `${e.clientY}px`;
+            header.appendChild(ripple);
+            setTimeout(() => {
+                header.removeChild(ripple);
+            }, 2000);
+        }
+        header.addEventListener('mousemove', createRipple);
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const bio = document.querySelector('.bio');
+            const paintings = document.querySelectorAll('.painting');
+            
+            const bioPosition = bio.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if(bioPosition < screenPosition) {
+                bio.classList.add('animate');
+            }
+
+            paintings.forEach((painting, index) => {
+                const paintingPosition = painting.getBoundingClientRect().top;
+                if(paintingPosition < screenPosition) {
+                    setTimeout(() => {
+                        painting.classList.add('animate');
+                    }, index * 200);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check on page load
+
+        // Modal for paintings
+        const paintings = document.querySelectorAll('.painting');
+        paintings.forEach(painting => {
+            painting.addEventListener('click', () => {
+                const imgSrc = painting.querySelector('img').src;
+                const title = painting.querySelector('p').textContent;
+                
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.flexDirection = 'column';
+                modal.style.zIndex = '1000';
+                modal.style.opacity = '0';
+                modal.style.transition = 'opacity 0.3s ease';
+
+                const modalImg = document.createElement('img');
+                modalImg.src = imgSrc;
+                modalImg.style.maxWidth = '80%';
+                modalImg.style.maxHeight = '80%';
+                modalImg.style.borderRadius = '10px';
+                modalImg.style.boxShadow = '0 0 30px rgba(255,255,255,0.3)';
+                modalImg.style.transform = 'scale(0.9)';
+                modalImg.style.transition = 'transform 0.3s ease';
+
+                const modalTitle = document.createElement('p');
+                modalTitle.textContent = title;
+                modalTitle.style.color = 'white';
+                modalTitle.style.fontSize = '1.5em';
+                modalTitle.style.marginTop = '20px';
+                modalTitle.style.fontFamily = "'Playfair Display', serif";
+
+                modal.appendChild(modalImg);
+                modal.appendChild(modalTitle);
+
+                modal.addEventListener('click', () => {
+                    modal.style.opacity = '0';
+                    modalImg.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        document.body.removeChild(modal);
+                    }, 300);
+                });
+
+                document.body.appendChild(modal);
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                    modalImg.style.transform = 'scale(1)';
+                }, 50);
+            });
+        });
+    });
+    </script>
+</body></html>
+<!-- partial -->
+  
+</body>
+</html>
